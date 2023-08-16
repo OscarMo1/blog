@@ -1,6 +1,6 @@
 
 import './App.css';
-import Homepage from './pages/Homepage';
+import Homepage from './pages/Home/Homepage';
 import Footer from './component/Footer';
 
 function App() {
