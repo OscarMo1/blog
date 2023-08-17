@@ -1,12 +1,19 @@
 
+import {Routes, Route}  from "react-router-dom";
 import './App.css';
 import Homepage from './pages/Home/Homepage';
-import Footer from './component/Footer';
+import ArticleInfo from './pages/ArticleInfo/ArticleInfo';
 
 function App() {
   return (
     <div className="App font-opensans">
-      <Homepage/>
+      <Routes>
+        <Route index path="/" element={<Homepage/>}/>
+        <Route index path="/blog" element={<ArticleInfo/>}/>
+      </Routes>
+      
+
+      
       
     </div>
   );
