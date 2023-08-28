@@ -5,6 +5,7 @@ export const getCommentsData = async () => {
         user: {
           _id: "a",
           name: "Mohammad Rezaii",
+          
         },
         desc: "it was a nice post, Thank you!",
         post: "1",
