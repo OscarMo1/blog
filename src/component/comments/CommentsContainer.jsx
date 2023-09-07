@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { getCommentsData } from '../../data/comments';
 import CommentForm from './CommentForm'
-import Comment from './Comment'
+import Comment from './comment';
 
-const CommentsContainer = ({className, logginUserId}) => {
+const CommentsContainer = ({className, logginedUserId}) => {
   const [comments, setComments] = useState([]);
   const mainComments = comments.filter((comment) => comment.parent === null);
   const [affectedComment, setAffectedComment] = useState(null);
@@ -42,7 +42,7 @@ const CommentsContainer = ({className, logginUserId}) => {
         {mainComments.map((comment)=>(
             <Comment 
               comment={comment} 
-              logginUserId={logginUserId} 
+              logginedUserId={logginedUserId} 
               affectedComment={affectedComment} 
               setAffectedComment={setAffectedComment}
               addComment={addCommentHandler}/>
