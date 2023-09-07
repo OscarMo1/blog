@@ -3,13 +3,15 @@ import { getCommentsData } from '../../data/comments';
 import CommentForm from './CommentForm'
 import Comment from './comment';
 
+<<<<<<< HEAD
 const CommentsContainer = ({className, logginedUserId}) => {
+=======
+const CommentsContainer = ({className}) => {
+>>>>>>> parent of db5982c (commments)
   const [comments, setComments] = useState([]);
   const mainComments = comments.filter((comment) => comment.parent === null);
-  const [affectedComment, setAffectedComment] = useState(null);
 
   console.log(comments);
-
   useEffect(() => {
     (async()=>{
         const commentData = await getCommentsData();
@@ -40,12 +42,16 @@ const CommentsContainer = ({className, logginedUserId}) => {
       <CommentForm btnLabel="Send" formSubmitHandler={(value) => addCommentHandler(value)}/>
       <div className="space-y-4 mt-8">
         {mainComments.map((comment)=>(
+<<<<<<< HEAD
             <Comment 
               comment={comment} 
               logginedUserId={logginedUserId} 
               affectedComment={affectedComment} 
               setAffectedComment={setAffectedComment}
               addComment={addCommentHandler}/>
+=======
+            <Comment comment={comment}/>
+>>>>>>> parent of db5982c (commments)
         ))}
       </div>
     </div>
