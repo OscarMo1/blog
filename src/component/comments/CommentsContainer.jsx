@@ -3,10 +3,9 @@ import { getCommentsData } from '../../data/comments';
 import CommentForm from './CommentForm'
 import Comment from './comment';
 
-const CommentsContainer = ({className, logginUserId}) => {
+const CommentsContainer = ({className}) => {
   const [comments, setComments] = useState([]);
   const mainComments = comments.filter((comment) => comment.parent === null);
-  const [affectedComment, setAffectedComment] = useState(null);
 
   console.log(comments);
   useEffect(() => {
@@ -39,12 +38,7 @@ const CommentsContainer = ({className, logginUserId}) => {
       <CommentForm btnLabel="Send" formSubmitHandler={(value) => addCommentHandler(value)}/>
       <div className="space-y-4 mt-8">
         {mainComments.map((comment)=>(
-            <Comment 
-              comment={comment} 
-              logginUserId={logginUserId} 
-              affectedComment={affectedComment} 
-              setAffectedComment={setAffectedComment}
-              addComment={addCommentHandler}/>
+            <Comment comment={comment}/>
         ))}
       </div>
     </div>
