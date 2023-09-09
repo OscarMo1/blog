@@ -69,7 +69,7 @@ const ArticleInfo = () => {
                   exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                 </p>
               </div>
-              <CommentsContainer className="mt-10  "/>
+              <CommentsContainer className="mt-10" logginedUserId="a"/>
             </article>
             <SuggestedPosts header="Latest Article" posts={postsData} tags={tagsData} className="mt-8 lg:mt-0 lg:max-w-xs"/>
         </section>
